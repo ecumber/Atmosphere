@@ -409,6 +409,8 @@ namespace ams::settings::fwdbg {
             /* for usage by other applets. This setting has no effect if */
             /* applet_heap_size is non-zero. The default is 0x8600000. */
             R_ABORT_UNLESS(ParseSettingsItemValue("hbloader", "applet_heap_reservation_size", "u64!0x8600000"));
+           
+            R_ABORT_UNLESS(ParseSettingsItemValue("atmosphere", "enable_quest_mode", "u64!0x0"));
         }
 
     }

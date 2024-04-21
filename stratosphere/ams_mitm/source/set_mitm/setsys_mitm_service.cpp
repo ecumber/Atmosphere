@@ -268,5 +268,14 @@ namespace ams::mitm::settings {
         out.SetValue(en != 0);
         R_SUCCEED();
     }
+    
+    Result SetSysMitmService::GetQuestFlag(sf::Out<bool> out) {
+        /* Retrieve the user configuration. */
+        u8 en = 0;
+        settings::fwdbg::GetSettingsItemValue(std::addressof(en), sizeof(en), "atmosphere", "enable_quest_mode");
+
+        out.SetValue(en != 0);
+        R_SUCCEED();
+    }
 
 }
